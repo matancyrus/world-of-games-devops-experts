@@ -15,10 +15,10 @@ def main():
         result = guess_game(difficulty=chosen_difficulty)
     if chosen_game == 3:
         result = currency_rolette_game(difficulty=chosen_difficulty)
-        if result:
-            print("Game completed successfully!")
-        else:
-            print("Game over!")
+    if result:
+        print("Game completed successfully!")
+    else:
+        print("Game over!")
 
 if __name__ == "__main__":
     main()
