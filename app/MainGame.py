@@ -2,6 +2,8 @@ from MemoryGame import memory_game
 from CurrencyRouletteGame import currency_rolette_game
 from GuessGame import guess_game
 from Live import greet, load_game
+from Score import add_score
+from Utils import BAD_RETURN_CODE
 
 def main():
     greet("Matan")
@@ -15,8 +17,12 @@ def main():
         result = guess_game(difficulty=chosen_difficulty)
     if chosen_game == 3:
         result = currency_rolette_game(difficulty=chosen_difficulty)
-    if result:
-        print("Game completed successfully!")
+    if result is True:
+        score = add_score(chosen_difficulty)
+        if score == BAD_RETURN_CODE:
+            print("You won, but the score could not be saved.")
+        else:
+            print(f"Game completed successfully! Total score: {score}")
     else:
         print("Game over!")
 

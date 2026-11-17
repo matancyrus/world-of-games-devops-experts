@@ -1,0 +1,7 @@
+services:
+  scores:
+    build:
+      context: .
+    ports:
+      - 8777:8777
+    image: matancyrus/world-of-games:latest
